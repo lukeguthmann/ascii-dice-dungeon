@@ -2,10 +2,10 @@
 # ASCII BATTLE DUNGEON
 ##################################################################
 
-
-print('-' * 60)
-print(' ' * 15 + 'ASCII DICE DUNGEON')
-print('-' * 60)
+def title():
+    print('-' * 60)
+    print(' ' * 15 + 'ASCII DICE DUNGEON')
+    print('-' * 60)
 
 import random
 import time
@@ -32,8 +32,6 @@ def adding_enemies():
     print(f'the total enemy count is {enemy_count}')
     return enemies_values_dictionary
 
-adding_enemy_values = (adding_enemies())
-
 
 def time_delay():
 
@@ -45,8 +43,6 @@ def time_delay():
         time.sleep(0.7)
         print(delay_message)
     print(f'Generated enemies: {adding_enemy_values}')
-
-time_delay()
 
 
 def battle_screen_function(stored_enemies_dictionary):
@@ -64,8 +60,6 @@ def battle_screen_function(stored_enemies_dictionary):
     print(*battle_field_print)
     print('-' * 40)
     return battle_field_print
-
-battle_screen_returned = battle_screen_function(adding_enemy_values)
 
 
 def players_total_health():
@@ -85,8 +79,6 @@ def players_total_health():
     stats = range(0, players_health)
 
     return players_health
-
-players_health_returned_value_var = players_total_health()
 
 
 def battle_system(players_health_returned_var_imported):
@@ -126,9 +118,12 @@ def battle_system(players_health_returned_var_imported):
                       ('▲ ' * players_health_returned_var_imported))
                 print('-' * 40)
 
-battle_system(players_health_returned_value_var)
 
-exit('YOU WON! Thank you for playing ASCII DICE DUNGEON')
-
-
-
+if __name__ == '__main__':
+    title()
+    adding_enemy_values = (adding_enemies())
+    time_delay()
+    battle_screen_returned = battle_screen_function(adding_enemy_values)
+    players_health_returned_value_var = players_total_health()
+    battle_system(players_health_returned_value_var)
+    exit('YOU WON! Thank you for playing ASCII DICE DUNGEON')
