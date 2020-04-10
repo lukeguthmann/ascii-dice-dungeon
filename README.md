@@ -18,7 +18,7 @@ https://github.com/lukeguthmann/ascii_dice_dungeon.git
 ```
 
 ## Usage
-1. Open terminal/bash/bash
+1. Open terminal
 2. Change into cloned directory:
 ```bash
 cd ascii_dice_dungeon
